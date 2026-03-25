@@ -1,387 +1,169 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>opime.online - redirect:anchorhost</title>
+    <title>opime.online -> AnchorHost</title>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/Opajm/Opajm/refs/heads/main/style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background-color: #121212;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            background-color: #1e1e1e;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul.left {
-            margin-right: auto;
-        }
-
-        nav ul.right {
-            margin-left: auto;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 12px 24px;
-            border-radius: 50px;
-            background-color: #2a2a2a;
-            transition: all 0.3s ease;
-            border: 2px solid #444;
-        }
-
-        img {
-            height: 80px;
-            width: 80px;
-        }
-
-        nav a:hover {
-            background-color: #fff;
-            color: #121212;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-        }
-
         .redirect-notice {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            border-radius: 25px;
-            padding: 50px;
-            margin-bottom: 60px;
-            border: 2px solid #444;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            background: #0d0d10c9;
+            border-radius: 1.8rem;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-left: 4px solid #6a6a7a;
             text-align: center;
-            animation: fadeInUp 0.6s ease-out forwards;
         }
-
         .redirect-notice h1 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            padding-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(120deg, #e8e8f0, #b0b0c0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
         }
-
-        .redirect-notice h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 4px;
-            background: linear-gradient(90deg, #fff, #666);
-            border-radius: 2px;
+        .warning-box {
+            background: #111115cc;
+            border: 1px solid #5a5a6a;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            color: #ccccdd;
         }
-
-        .redirect-notice p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            color: #ddd;
-            line-height: 1.8;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .redirect-notice .warning {
-            background-color: rgba(255, 193, 7, 0.1);
-            border: 2px solid #ffc107;
-            border-radius: 15px;
-            padding: 25px 0 0px 0;
-            margin: 30px 0;
-            color: #ffc107;
-            font-size: 1.2rem;
-        }
-
-        .redirect-options {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .redirect-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: #fff;
-            background-color: transparent;
-            border: 2px solid #fff;
-            padding: 18px 45px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-            min-width: 200px;
-            text-align: center;
-        }
-
-        .redirect-btn.primary {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            border: none;
-            color: white;
-        }
-
-        .redirect-btn.secondary {
-            background-color: #2a2a2a;
-            border-color: #666;
-        }
-
-        .redirect-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
-        }
-
-        .redirect-btn.primary:hover {
-            background: linear-gradient(135deg, #66BB6A, #388E3C);
-            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
-        }
-
-        .redirect-btn.secondary:hover {
-            background-color: #3a3a3a;
-            border-color: #fff;
-        }
-
         .timer {
             font-size: 1.4rem;
             font-weight: bold;
-            color: #4CAF50;
+            color: #9f9faf;
             margin: 20px 0;
             font-family: monospace;
         }
-
-        footer {
-            text-align: center;
-            padding: 35px;
-            margin-top: 40px;
-            background-color: #1e1e1e;
-            border-radius: 20px;
-            color: #aaa;
+        .redirect-options {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .redirect-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            font-weight: 600;
+            border-radius: 60px;
+            transition: all 0.3s ease;
             font-size: 1rem;
-            border-top: 2px solid #333;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
         }
-
-        footer p {
-            letter-spacing: 1px;
+        .redirect-btn.primary {
+            background: #2a2a32;
+            border: 1px solid #6a6a7a;
+            color: #e0e0ec;
         }
-
+        .redirect-btn.primary:hover {
+            background: #3a3a44;
+            transform: translateY(-2px);
+        }
+        .redirect-btn.secondary {
+            background: #151518;
+            border: 1px solid #4a4a58;
+            color: #ccccdd;
+        }
+        .redirect-btn.secondary:hover {
+            background: #25252c;
+        }
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 20px;
-                padding: 20px;
-            }
-            
-            nav ul {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            
-            nav ul.left, nav ul.right {
-                margin: 0;
-            }
-            
-            nav a {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-            
             .redirect-notice {
-                padding: 40px 25px;
-                border-radius: 20px;
+                padding: 1.5rem;
             }
-            
             .redirect-notice h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
-            
-            .redirect-notice p {
-                font-size: 1.1rem;
-            }
-            
-            .redirect-options {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-            
-            .redirect-btn {
-                width: 100%;
-                max-width: 300px;
-                padding: 16px 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-            
-            nav {
-                padding: 15px;
-                border-radius: 15px;
-            }
-            
-            nav a {
-                font-size: 0.9rem;
-                padding: 8px 16px;
-            }
-            
-            .redirect-notice {
-                padding: 30px 20px;
-                border-radius: 15px;
-            }
-            
-            .redirect-notice h1 {
-                font-size: 1.7rem;
-            }
-            
-            .redirect-notice p {
-                font-size: 1rem;
-            }
-            
-            footer {
-                padding: 25px;
-                border-radius: 15px;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        nav, .redirect-notice, footer {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .redirect-notice {
-            animation-delay: 0.2s;
-        }
-
-        footer {
-            animation-delay: 0.4s;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul class="left">
-            <li><img src="logo.png" alt="Strona główna"></li>
-        </ul>
-        <ul class="right">
-            <li><a href="anchorhost.html">AnchorHost</a></li>
-            <li><a href="index.html#contact">Kontakt</a></li>
-            <li><a href="index.html#about_project">O projekcie</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <div class="redirect-notice">
-            <h1>Przekierowanie do AnchorHost</h1>
-            
-            <div class="warning">
-                <p><strong>⚠️ UWAGA:</strong> AnchorHost jest zewnętrznym dostawcą usług hostingowych.</p>
-                <p>AnchorHost to nasz zaufany partner, który zapewnia hosting dla serwerów projektu opime.online. Jeśli chcesz dowiedzieć się więcej o ich usługach lub z nich skorzystać, kliknij przycisk poniżej.</p>
+    <div class="dark-bg">
+        <nav class="sticky-nav">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <img src="logo.png" alt="opime.online Logo" class="logo-img" onerror="this.onerror=null; this.src='https://github.com/Opajm/Opajm/blob/main/logo.png?raw=true';">
+                    <a href="index.html" class="home-link">⌂ back to opime.online</a>
+                </div>
+                <div class="nav-right">
+                    <a href="index.html#main-section" class="nav-link">Main</a>
+                    <a href="index.html#support-contact" class="nav-link">Support</a>
+                    <a href="#" class="nav-link" id="moreSoonRedirect"><span class="badge-soon">More comming soon...</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-panel">
+            <div class="redirect-notice">
+                <h1>🔗 Redirecting to AnchorHost</h1>
+                
+                <div class="warning-box">
+                    <p><strong>⚠️ Notice:</strong> AnchorHost is an external hosting provider.</p>
+                    <p>AnchorHost is our trusted partner providing hosting infrastructure for opime.online projects. Click the button below to visit their website.</p>
+                </div>
+                
+                <div class="timer" id="countdown">Automatic redirect in: 15</div>
+                
+                <div class="redirect-options">
+                    <a href="https://anchorhost.eu" class="redirect-btn primary" id="redirectLink">
+                        🔗 Go to AnchorHost
+                    </a>
+                    <a href="index.html" class="redirect-btn secondary">
+                        ↩️ Return to opime.online
+                    </a>
+                </div>
             </div>
             
-            
-            
-            <div class="timer" id="countdown">Automatyczne przekierowanie za: 15</div>
-            
-            <div class="redirect-options">
-                <a href="https://anchorhost.eu" class="redirect-btn primary" id="redirect-link">
-                    🔗 Przejdź do AnchorHost
-                </a>
-                <a href="index.html" class="redirect-btn secondary">
-                    ↩️ Wróć do opime.online
-                </a>
-            </div>
-        </div>
-    </main>
-    
-    <footer>
-        <p>© 2025 opime.online.</p>
-    </footer>
+            <footer>
+                <p>opime.online</p>
+            </footer>
+        </main>
+    </div>
 
     <script>
         let countdown = 15;
         const countdownElement = document.getElementById('countdown');
-        const redirectLink = document.getElementById('redirect-link');
+        const redirectLink = document.getElementById('redirectLink');
         
-        const updateCountdown = () => {
-            countdownElement.textContent = `Automatyczne przekierowanie za: ${countdown}`;
-            
+        function updateCountdown() {
+            countdownElement.textContent = `Automatic redirect in: ${countdown}`;
             if (countdown === 0) {
                 window.location.href = 'https://anchorhost.eu';
             } else {
                 countdown--;
                 setTimeout(updateCountdown, 1000);
             }
-        };
+        }
         
         updateCountdown();
         
         redirectLink.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            redirectLink.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                redirectLink.style.transform = 'translateY(-5px)';
-            }, 100);
-            
             window.location.href = 'https://anchorhost.eu';
         });
         
-        if (localStorage.getItem('anchorhost_redirect_accepted') === 'true') {
-            countdown = 15;
+        const moreBtn = document.getElementById('moreSoonRedirect');
+        if (moreBtn) {
+            moreBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const toast = document.createElement('div');
+                toast.textContent = '✨ More coming soon!';
+                toast.style.position = 'fixed';
+                toast.style.bottom = '24px';
+                toast.style.left = '50%';
+                toast.style.transform = 'translateX(-50%)';
+                toast.style.backgroundColor = '#1a1a20e6';
+                toast.style.color = '#e0e0ec';
+                toast.style.padding = '12px 28px';
+                toast.style.borderRadius = '60px';
+                toast.style.zIndex = '9999';
+                toast.style.border = '1px solid #4a4a58';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2800);
+            });
         }
     </script>
 </body>
