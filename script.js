@@ -23,22 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    function showToast(message) {
+    function showToast() {
         const toast = document.createElement('div');
-        toast.textContent = message;
+        toast.textContent = '✨ More coming soon! Stay tuned.';
         toast.style.position = 'fixed';
         toast.style.bottom = '24px';
         toast.style.left = '50%';
         toast.style.transform = 'translateX(-50%)';
-        toast.style.backgroundColor = '#1a1a20e6';
+        toast.style.backgroundColor = '#1a1a1a';
         toast.style.backdropFilter = 'blur(16px)';
-        toast.style.color = '#e0e0ec';
+        toast.style.color = '#e0e0e0';
         toast.style.padding = '12px 28px';
         toast.style.borderRadius = '60px';
         toast.style.fontSize = '0.85rem';
         toast.style.fontWeight = '500';
         toast.style.zIndex = '9999';
-        toast.style.border = '1px solid #4a4a58';
+        toast.style.border = '1px solid #333333';
         toast.style.boxShadow = '0 12px 24px rgba(0,0,0,0.6)';
         toast.style.fontFamily = 'inherit';
         document.body.appendChild(toast);
@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (moreNavBtn) {
         moreNavBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showToast("✨ More coming soon!");
+            showToast();
         });
     }
     if (moreHeroBtn) {
         moreHeroBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showToast("🌍 More coming soon... Stay tuned!");
+            showToast();
         });
     }
 });

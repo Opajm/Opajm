@@ -8,62 +8,111 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dark-bg">
-        <nav class="sticky-nav">
-            <div class="nav-container">
-                <div class="nav-left">
-                    <img src="logo.png" alt="opime.online Logo" class="logo-img" id="mainLogo" onerror="this.onerror=null; this.src='https://github.com/Opajm/Opajm/blob/main/logo.png?raw=truehttps://github.com/Opajm/Opajm/blob/main/logo.png?raw=true';">
-                    <a href="#" class="home-link" id="indexTopBtn">⌂ index / home</a>
+    <nav>
+        <div class="left">
+            <img src="logo.png" alt="opime.online Logo" id="mainLogo" onerror="this.onerror=null; this.src='https://github.com/Opajm/Opajm/blob/main/logo.png?raw=true';">
+            <a href="#" class="home-link" id="indexTopBtn">opime / index</a>
+        </div>
+        <div class="right">
+            <a href="#main-section" class="nav-link">About project</a>
+            <a href="#support-contact" class="nav-link">Contact</a>
+            <a href="#" class="nav-link" id="moreSoonNav"><span class="badge-soon">More comming soon...</span></a> 
+        </div>
+    </nav>
+    <main>
+        <div class="hero">
+            <img src="logo.png" alt="opime.online Logo" class="big-logo" onerror="this.onerror=null; this.src='https://github.com/Opajm/Opajm/blob/main/logo.png?raw=true';">
+            <div class="domain-name">opime.online</div>
+            <div class="hero-links">
+                <a href="#main-section" class="hero-link">About project</a>
+                <a href="#support-contact" class="hero-link">Contact</a>
+                <a href="#" class="hero-link" id="heroMoreSoon">More comming soon...</a>
+            </div>
+        </div>
+
+        <div id="main-section" class="section">
+            <h2 class="section-title">✦ About the project</h2>
+            <div class="about-text">
+                <p><span class="highlight">opime.online</span> is a Minecraft server built to <strong>unite players worldwide</strong>. We are developing <span class="highlight">original game modes</span> that break the usual survival/faction templates</p>
+                <p>🌍 <span class="highlight">Language is no longer a barrier</span> — our integrated translator allows players speaking English, Spanish, French, German, and more to communicate seamlessly. Our mission: create a truly global Minecraft home where every player feels welcome, regardless of origin.</p>
+                <p>⚡ Expect weekly events, community suggestions etc.</p>
+            </div>
+        </div>
+
+        <hr>
+        
+        <div id="roadmap-section" class="section-none">
+            <div class="roadmap-wrapper">
+                <div class="roadmap-line-container">
+                    <div class="roadmap-line"></div>
                 </div>
-                <div class="nav-right">
-                    <a href="#main-section" class="nav-link">About project</a>
-                    <a href="#support-contact" class="nav-link">Support</a>
-                    <a href="#" class="nav-link" id="moreSoonNav"><span class="badge-soon">More comming soon...</span></a>
+                <ul class="roadmap-grid">
+                    <li class="roadmap-item left">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Set up a server</span>
+                    </li>
+                    <li class="roadmap-item right">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Come up with modes and maps</span>
+                    </li>
+                    <li class="roadmap-item left">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Create them</span>
+                    </li>
+                    <li class="roadmap-item right">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Test and refine</span>
+                    </li>
+                    <li class="roadmap-item left">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Create a live translator</span>
+                    </li>
+                    <li class="roadmap-item right">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Promote the server</span>
+                    </li>
+                    <li class="roadmap-item left">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Launch an alpha server</span>
+                    </li>
+                    <li class="roadmap-item right">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Get advices from the community</span>
+                    </li>
+                    <li class="roadmap-item left">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Implement them</span>
+                    </li>
+                    <li class="roadmap-item right">
+                        <span class="roadmap-dot"></span>
+                        <span class="roadmap-card">Do an official release</span>
+                    </li>
+                </ul>
+                <div class="roadmap-goal">
+                    <span class="goal-text">GOAL</span>
                 </div>
             </div>
-        </nav>
+        </div>
 
-        <main class="main-panel">
-            <div class="hero">
-                <img src="logo.png" alt="opime.online Logo" class="big-logo" onerror="this.onerror=null; this.src='https://github.com/Opajm/Opajm/blob/main/logo.png?raw=true';">
-                <div class="domain-name">opime.online</div>
-            </br>
-                <div class="hero-links">
-                    <a href="#main-section" class="hero-link">About project</a>
-                    <a href="#support-contact" class="hero-link">Support</a>
-                    <a href="#" class="hero-link" id="heroMoreSoon">More comming soon...</a>
+        <hr>
+
+        <div id="support-contact" class="section">
+            <h2 class="section-title">📬 Contact & suggestions</h2>
+            <div class="contact-flex">
+                <div class="contact-buttons">
+                    <a href="https://github.com/Opajm/Opajm/issues/new/choose" target="_blank" rel="noopener noreferrer" class="github-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Report via GitHub Repository
+                    </a>
                 </div>
             </div>
-
-            <div id="main-section" class="section-card">
-                <h2 class="section-title">✦ About the project</h2>
-                <div class="about-text">
-                    <p><span class="highlight">opime.online</span> is a Minecraft server built to <strong>unite players worldwide</strong>. We are developing <span class="highlight">original game modes</span> that break the usual survival/faction templates</p>
-                    <p style="margin-top: 1rem;">🌍 <span class="highlight">Language is no longer a barrier</span> — our integrated translator allows players speaking English, Spanish, French, German, and more to communicate seamlessly. Our mission: create a truly global Minecraft home where every player feels welcome, regardless of origin.</p>
-                    <p style="margin-top: 1rem;">⚡ Expect weekly events, community suggestions etc.</p>
-                </div>
-            </div>
-
-            <div id="support-contact" class="section-card">
-                <h2 class="section-title">📬 Contact & suggestions</h2>
-                <div class="contact-flex">
-                    <div class="contact-buttons">
-                        <a href="https://github.com/Opajm/Opajm/issues/new/choose" target="_blank" rel="noopener noreferrer" class="github-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            Report via GitHub Repository
-                        </a>
-                    </div>
-                </div>
-                <hr>
-                <p class="response-note">📌 For faster response, please categorize your inquiry (Questions, Suggestion, etc.) when opening an issue.</p>
-            </div>
-
-            <footer>
-                <p>opime.online</p>
-            </footer>
-        </main>
-    </div>
-
+            <p class="response-note">📌 For faster response, please categorize your inquiry (Questions, Suggestion, etc.) when opening an issue.</p>
+        </div>
+    </main>
+    <footer>
+        <p>©️ 2026 opime.online</p>
+        <p>The project is not affiliated with Mojang Studios or other companies.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
